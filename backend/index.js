@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n');
+    res.end('Pizza\n');
 });
 
 server.listen(port, hostname, () => {

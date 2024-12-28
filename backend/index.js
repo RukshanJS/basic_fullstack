@@ -1,17 +1,19 @@
-const http = require('http');
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    
-    // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Pizza\n');
+// Enable CORS for all routes
+app.use(cors());
+
+// Route handler
+app.get('/', (req, res) => {
+    res.type('text/plain');
+    res.send('Pizza\n');
 });
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });

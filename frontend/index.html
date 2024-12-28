@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World App</title>
     <link rel="stylesheet" href="index.css">
-
-    <script>
-        // This function will be executed when the page loads
-        window.onload = function() {
-            // Make a fetch request to the Node.js server
-            fetch('http://127.0.0.1:3000/')
-                .then(response => response.text())
-                .then(data => {
-                    // Display the response in the div with id="message"
-                    document.getElementById('message').innerText = data;
-                })
-                .catch(error => console.error('There was an error:', error));
-        };
-    </script>
+    <script src="index.js" defer></script>
 </head>
+
 <body>
     <h1>Message from the server:</h1>
     <div id="message">Loading...</div>
 </body>
+
 </html>
